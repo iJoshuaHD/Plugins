@@ -26,6 +26,8 @@ public function init(){
 		$this->api->schedule(20* 20, array($this, "Hunger"), array(), true); 
 }
 
+    public function __destruct() {}
+
 //Here stsrts it i think lol here
 public function eventHandler($data, $event)
 	{
