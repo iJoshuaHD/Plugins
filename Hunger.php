@@ -1,0 +1,25 @@
+<?php
+/*
+__PocketMine Plugin__
+name=Hunger
+version=1.0.0 BETA
+description=Gives hunger by every 5 minutes
+author=TrilogiForce
+class=HBSl
+apiversion=9, 10 ,11 ,12 , 13
+*/
+
+/*
+This its a beta version of Hunger plugin
+please report any bugs to TrilogiForce in Quantom.jimdo.com!!
+*/
+
+class HBSl implements Plugin{
+private $api;
+public function __construct(ServerAPI $api, $server = false){
+$this->api = $api;
+}
+
+public function init(){
+$this->api->addHandler("entity.health.change", array($this, "eventHandler"), 50);
+}
