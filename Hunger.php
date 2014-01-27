@@ -21,5 +21,20 @@ $this->api = $api;
 }
 
 public function init(){
-$this->api->addHandler("entity.health.change", array($this, "eventHandler"), 50);
+  		console("Hunger: Plugin Started! ");
+		$this->api->addHandler("entity.health.change", array($this, "eventHandler"), 100);
 }
+
+//Here stsrts it i think lol here
+public function eventHandler($data, $event)
+	{
+		switch($event)
+		{
+	case 'entity.health.change':
+	
+	if($this->damage == true)
+	{
+	  $this->api->chat->broadcast(" You Are Getting Hungery! ");
+	return true;
+	}
+
