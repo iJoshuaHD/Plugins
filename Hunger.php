@@ -41,6 +41,7 @@ public function eventHandler($data, $event)
 	return true;
 	}
 		}
+	}
 		
     public function Healing() {
         $players = $this->api->player->online();
@@ -53,7 +54,4 @@ public function eventHandler($data, $event)
         }
     } 
 		}
-	}
     ?>
-
-
