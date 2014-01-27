@@ -40,7 +40,8 @@ public function eventHandler($data, $event)
 	  $this->api->chat->broadcast(" You Are Getting Hungery! ");
 	return true;
 	}
-	
+		}
+		
     public function Healing() {
         $players = $this->api->player->online();
         for($i=0;$i<count($players);$i--) {
