@@ -2,7 +2,7 @@
 /*
 __PocketMine Plugin__
 name=Hunger
-version=1.0.0 BETA
+version=2.0.1 BETA
 description=Gives hunger by every 5 minutes
 author=TrilogiForce
 class=HBSl
@@ -11,7 +11,7 @@ apiversion=9, 10 ,11 ,12 , 13
 
 /*
 This its a beta version of Hunger plugin
-please report any bugs to TrilogiForce in Quantom.jimdo.com!!
+please report any bugs to TrilogiForce or Syriamanal in Quantom.jimdo.com!!
 */
 
 class HBSl implements Plugin{
@@ -21,7 +21,7 @@ $this->api = $api;
 }
 
 public function init(){
-                  console("Hunger: Plugin Started! ");
+                  console("[Hunger] Plugin Started! ");
                 $this->api->schedule(20* 20, array($this, "Hunger"), array(), true);
 }
 
@@ -36,6 +36,7 @@ public function init(){
             $player = $this->api->player->get($players[$i]);
             if ($player->entity->getHealth() <= 20) { 
                 $player->entity->setHealth($player->entity->getHealth()-1, "Hunger"); //heal 1 health
+                
             }
         }
     }
