@@ -1,0 +1,9 @@
+---
+interval: 2
+messages:
+  - [QNP]Buy ranks at bit.ly/
+  - [QNP]Check out our website! bit.ly/QNWEB
+  - [QNP]Want a reserved slot? bit.ly/QNWRS
+  - [QNP]Quantom Network a new whole way to play!
+  - [QNP]Do not ask for op!Buy it!
+  - [QNP]Syriamanal and TrilogiForce are owners!
