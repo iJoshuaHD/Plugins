@@ -16,7 +16,6 @@ $this->api = $api;
 }
 public function init(){
                   console("[Hunger] Plugin Started! ");
-                $this->api->schedule(20* 20, array($this, "Alert"), array(), true);
                 $this->api->schedule(40* 90, array($this, "Chat1"), array(), true);
                 $this->api->schedule(50* 90, array($this, "Chat2"), array(), true);
                 $this->api->schedule(60* 90, array($this, "Chat3"), array(), true);
@@ -65,6 +64,15 @@ public function Chat7 () {
 public function Chat8 () {
                                                 $this->api->chat->broadcast("[QN] Server is online 24/7! ");
               }
+              
+public function HealthDanger () {
+	$players = $this->api->player->online();
+        for($i=0;$i<count($players);$i++) {
+        $player = $this->api->player->get($players[$i]);
+        if ($player->entity->getHealth() != 2) {
+            $data['player']->sendChat(" Warning! Very Low Health Detected!");
+         }
+              }
 
 
 
@@ -75,12 +83,14 @@ public function Chat8 () {
         for($i=0;$i<count($players);$i++) {
         $player = $this->api->player->get($players[$i]);
         if ($player->entity->getHealth() != 20) {
-           $this->api->chat->broadcast(" You Are Getting Hungry! ");
+            $data['player']->sendChat(" You Are Getting Hungry! ");
         $player->entity->setHealth($player->entity->getHealth()-1, "Hunger"); 
          }
 		if ($player->entity->getHealth() != 1) {
         $player->entity->setHealth($player->entity->getHealth()+2, "Hunger"); 
-		$player->sendChat(" You are getting healed! ");
+		$data['player']->sendChat(" You Are Getting Healed! ");
+		
+	
                                    }
                                 }
                                 }
